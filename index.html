@@ -5,10 +5,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Wisielec</title>
+    <link rel=".css/style.css" />
 </head>
 
 <body>
-
+    <header>
+        <h1>Hangman</h1>
+    </header>
+    <section>
+        <div id="output"></div>
+        <div id="word"></div>
+        <div id="category"></div>
+        <div id="letter"></div>
+    </section>
+    <footer>By Bolek</footer>
+    <script src="App/Game.js"></script>
+    <script>
+        const game = new Game()
+        game.start()
+    </script>
 </body>
 
 </html>
