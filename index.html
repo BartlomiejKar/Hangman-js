@@ -5,23 +5,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Wisielec</title>
-    <link rel=".css/style.css" />
+    <link rel="stylesheet" href="./css/style.css">
 </head>
 
 <body>
     <header>
         <h1>Hangman</h1>
     </header>
-    <section>
+    <section class="Hangman">
         <div id="output"></div>
         <div id="word"></div>
         <div id="category"></div>
-        <div id="letter"></div>
+        <div id="letters"></div>
     </section>
     <footer>By Bolek</footer>
     <script src="App/Game.js"></script>
     <script>
-        const game = new Game()
+        const game = new Game({
+            outputWrapper: document.getElementById("output"),
+            wordWrapper: document.getElementById("word"),
+            categoryWrapper: document.getElementById("category"),
+            letterWrapper: document.getElementById("letters")
+        })
         game.start()
     </script>
 </body>
