@@ -24,8 +24,9 @@ class Game {
 
     }
 
-    clickButton = (letter) => {
+    clickButton = (letter, event) => {
         console.log(letter)
+        event.target.disabled = true
         this.sentence.guessLetters(letter)
         this.getWords()
     }
@@ -35,7 +36,7 @@ class Game {
         alphabet.forEach(element => {
             const button = document.createElement("button")
             button.textContent = element
-            button.addEventListener("click", () => this.clickButton(element))
+            button.addEventListener("click", (event) => this.clickButton(element, event))
             this.letterWrapper.appendChild(button)
         })
     }
