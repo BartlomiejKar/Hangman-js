@@ -6,6 +6,9 @@ html {
     width: 800px;
     margin: 30px auto;
 }
+.header {
+    text-align: center;
+}
 
 #word {
     letter-spacing: 5px;

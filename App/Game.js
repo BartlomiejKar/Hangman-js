@@ -3,6 +3,9 @@
 import { Sentences } from "./Sentences.js"
 
 class Game {
+    step = 0
+    lastStep = 8
+
     quotes = [{
         text: "terminator",
         category: "film"
@@ -25,10 +28,23 @@ class Game {
     }
 
     clickButton = (letter, event) => {
-        console.log(letter)
         event.target.disabled = true
-        this.sentence.guessLetters(letter)
+        if (!this.sentence.guessLetters(letter)) {
+            this.drawingStep()
+        }
         this.getWords()
+        if (!this.wordWrapper.textContent.includes("_")) {
+            this.winning()
+        }
+        if (this.step === this.lastStep) {
+            this.loosing()
+        }
+
+    }
+
+    drawingStep = () => {
+        document.getElementsByClassName("step")[this.step].style.opacity = "1"
+        this.step++
     }
 
     getLetters = () => {
@@ -46,9 +62,21 @@ class Game {
         this.wordWrapper.textContent = content
     }
 
+    winning = () => {
+        this.letterWrapper.textContent = "";
+        this.categoryWrapper.textContent = "";
+        this.wordWrapper.textContent = "BRAWO WYGRAŁES"
+    }
+    loosing = () => {
+        this.letterWrapper.textContent = "";
+        this.categoryWrapper.textContent = "";
+        this.wordWrapper.textContent = "PRZEGRAŁEŚ"
+    }
+
     start() {
         this.getLetters()
         this.getWords()
+
 
     }
 }
