@@ -26,6 +26,8 @@ class Game {
 
     clickButton = (letter) => {
         console.log(letter)
+        this.sentence.guessLetters(letter)
+        this.getWords()
     }
 
     getLetters = () => {
@@ -38,10 +40,14 @@ class Game {
         })
     }
 
-    start() {
-        this.getLetters()
+    getWords = () => {
         const content = this.sentence.getContent()
         this.wordWrapper.textContent = content
+    }
+
+    start() {
+        this.getLetters()
+        this.getWords()
 
     }
 }

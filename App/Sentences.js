@@ -1,21 +1,29 @@
 export class Sentences {
     constructor(text) {
-        this.text = text
+        this.text = text,
+            this.guessedLetters = []
     }
 
 
     getContent = () => {
         let content = ""
         for (let char of this.text) {
-            if (char !== " ") {
-                content = content + "_"
+            if (char == " " || this.guessedLetters.includes(char)) {
+                content = content + char
             } else {
-                content = content + " "
+                content = content + "_"
             }
         }
         return content
     }
 
-
+    guessLetters = (letters) => {
+        if (!this.text.includes(letters)) {
+            return false
+        } else {
+            this.guessedLetters.push(letters)
+            return true
+        }
+    }
 
 }
