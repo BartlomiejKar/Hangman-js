@@ -4,11 +4,14 @@ import { Sentences } from "./Sentences.js"
 
 class Game {
     quotes = [{
-        text: "Terminator",
-        category: "Film"
+        text: "terminator",
+        category: "film"
     }, {
-        text: "Sanah",
-        category: "Muzyka"
+        text: "sanah",
+        category: "muzyka"
+    }, {
+        text: "robert lewandowski",
+        category: "piłkarz"
     }];
     constructor({ outputWrapper, wordWrapper, categoryWrapper, letterWrapper }) {
         this.outputWrapper = outputWrapper,
@@ -16,9 +19,9 @@ class Game {
             this.categoryWrapper = categoryWrapper,
             this.letterWrapper = letterWrapper
         const { text, category } = this.quotes[Math.floor(Math.random() * this.quotes.length)]
-        console.log(text)
-        console.log(category)
+        this.categoryWrapper.textContent = category
         this.sentence = new Sentences(text)
+
     }
 
     clickButton = (letter) => {
@@ -37,7 +40,8 @@ class Game {
 
     start() {
         this.getLetters()
-
+        const content = this.sentence.getContent()
+        this.wordWrapper.textContent = content
 
     }
 }

@@ -1,7 +1,21 @@
 export class Sentences {
     constructor(text) {
         this.text = text
-        console.log(`${this.text} z sentence.js`)
     }
+
+
+    getContent = () => {
+        let content = ""
+        for (let char of this.text) {
+            if (char !== " ") {
+                content = content + "_"
+            } else {
+                content = content + " "
+            }
+        }
+        return content
+    }
+
+
 
 }
