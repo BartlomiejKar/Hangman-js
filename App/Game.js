@@ -28,13 +28,16 @@ class Game {
     }
 
     clickButton = (letter, event) => {
-        event.target.disabled = true
+        event.target.disabled = true;
         if (!this.sentence.guessLetters(letter)) {
-            this.drawingStep()
+            this.drawingStep();
+            event.target.style.backgroundColor = `#F7CAC9`;
+        } else {
+            event.target.style.backgroundColor = `#C1F6B6`;
         }
         this.getWords()
         if (!this.wordWrapper.textContent.includes("_")) {
-            this.winning()
+            this.winning();
         }
         if (this.step === this.lastStep) {
             this.loosing()
