@@ -88,7 +88,7 @@ const game = new Game({
     outputWrapper: document.getElementById("output"),
     wordWrapper: document.getElementById("word"),
     categoryWrapper: document.getElementById("category"),
-    letterWrapper: document.getElementById("letters")
+    letterWrapper: document.getElementById("letters"),
 })
 game.start()
 
