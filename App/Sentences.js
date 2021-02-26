@@ -1,6 +1,6 @@
 export class Sentences {
     constructor(text) {
-        this.text = text,
+        this.text = text.toLowerCase(),
             this.guessedLetters = []
     }
 
