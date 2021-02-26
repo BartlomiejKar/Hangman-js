@@ -7,14 +7,29 @@ class Game {
     lastStep = 8
 
     quotes = [{
-        text: "terminator",
-        category: "film"
+        text: "Terminator",
+        category: "Tytuł filmu"
     }, {
-        text: "sanah",
-        category: "muzyka"
+        text: "Johnny Deep",
+        category: "Aktor"
     }, {
-        text: "robert lewandowski",
+        text: "Robert Lewandowski",
         category: "piłkarz"
+    }, {
+        text: "Wisła Kraków",
+        category: "klub piłkarski"
+    }, {
+        text: "Tatry",
+        category: "Pasmo Górskie"
+    }, {
+        text: "Samsung",
+        category: "Telefony"
+    }, {
+        text: "Adidas",
+        category: "Obuwie"
+    }, {
+        text: "Discovery",
+        category: "Telewizja"
     }];
     constructor({ outputWrapper, wordWrapper, categoryWrapper, letterWrapper }) {
         this.outputWrapper = outputWrapper,
